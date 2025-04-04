@@ -1,0 +1,57 @@
+body{
+margin: 0;
+background-color: rgb(42, 126, 165);
+}
+
+.divHeaderImageAndAppName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    gap: 10px;
+}
+
+.divMainHeader{
+background-color: rgb(255, 255, 255);
+padding: 10px 10px;
+}
+
+.imageHeader{
+    width: 100px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.calltoAction1{
+    display: flex;
+    max-width: 1024px;
+    color: white;
+    font-size: 40px;
+}
+
+.typing{
+    display: flex;
+    max-width: 1024px;
+    color: rgb(2, 14, 0);
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.infoBudget1{
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(187, 101, 101); */
+    justify-content: center;
+    margin: 2% 5%;
+
+}
+
+.calltoAction2{
+    max-width: 400px;
+    font-size: 18px;
+    text-align: justify;
+}
