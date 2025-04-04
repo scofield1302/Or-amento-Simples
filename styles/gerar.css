@@ -1,0 +1,100 @@
+body{
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shape{
+    background-color: grey;
+    height: 1px;
+}
+
+.div1{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 4px 4px 4px 2px;
+    min-height: 300px;
+    margin: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.spanFillInfo{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formGenerate1{
+    display: flex;
+    flex-direction: column;
+}
+
+.divInRow{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.divInColumn{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.standardInput{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #08164493;
+    min-width: 300px;
+    height: 40px ;
+    padding: 0px 10px;
+}
+
+.divForm1{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    gap: 10px;
+}
+
+textarea{
+    resize: none;
+    min-height: 100px;
+    
+}
+
+.productDescription{
+    width: auto;
+    min-height: 40px;
+}
+
+.productQuantity, .productMeasure, .productPrice, .productTotalPrice{
+    width: 100px;
+    height: 40px;
+}
+
+
+.productObs{
+    width: auto;
+    height: 40px;
+}
+
+.addItem{
+    height: 40px;
+}
