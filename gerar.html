@@ -6,6 +6,9 @@
     <title>Gerar Orçamento</title>
     <link rel="stylesheet" href="./styles/gerar.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
 
 </head>
 
@@ -29,46 +32,54 @@
             <form class="divInRow" action="" method="post">
                 <div class="divInColumn">
                 <label for="userDocument">CPF ou CNPJ</label>
-                <input class="standardInput" name="userDocument" placeholder="CPF ou CNPJ" type="text">
+                <input id="inpt_document" class="standardInput" name="userDocument" placeholder="CPF ou CNPJ" type="text">
                 </div>
                 <div class="divInColumn">
                 <label for="userAddress">Endereço Comercial</label>
-                <input class="standardInput" type="text" name="userAddress" placeholder="Seu Endereço Comercial">
+                <input id="comercialAddress" class="standardInput" type="text" name="userAddress" placeholder="Seu Endereço Comercial">
                 </div>
             </form>
+                 <div class="divInColumn">
+                <label for="productObs">Observações</label>
+                <input id="observations" class="productObs" type="text" name="productObs" placeholder="Observações">
+                </div>
+                <div class="shape"></div>
+
                 <div class="divInColumn">
                 <label for="productDescription">Descrição do produto ou serviço</label>
-                <input class="productDescription" type="text" name="productDescription" placeholder="Descrição do produto ou serviço">
+                <input id="nameItem" class="productDescription" type="text" name="productDescription" placeholder="Descrição do produto ou serviço">
                 </div>
 
                 <div class="divInRow">
                 <div class="divInColumn">
                 <label for="productQuantity">Quantidade</label>
-                <input class="productQuantity" type="number" name="productQuantity" placeholder="Quantidade">
+                <input id="quantity" class="productQuantity" type="number" name="productQuantity" placeholder="Quantidade">
                 </div>
         
                 <div class="divInColumn">
                     <label for="productMeasure">Und. Medida</label>
-                    <input class="productMeasure" type="text" name="productMeasure" placeholder="Und. Medida">
+                    <input id="unity" class="productMeasure" type="text" name="productMeasure" placeholder="Und. Medida">
                     </div>
 
                 <div class="divInColumn">
                 <label for="productPrice">Valor Individual</label>
-                <input class="productPrice" type="number" name="productPrice" placeholder="Preço Individual">
+                <input id="value" class="productPrice" type="number" name="productPrice" placeholder="Preço Individual">
                 </div>
                 
                 <div class="divInColumn">
                 <label for="productTotalPrice">Valor Total</label>
-                <input class="productTotalPrice" type="number" name="productTotalPrice" placeholder="Preço Total">
+                <input id="totalPrice" class="productTotalPrice" type="number" name="productTotalPrice" placeholder="Preço Total">
                 </div>
 
             </div>
-            <div class="divInColumn">
-                <label for="productObs">Observações</label>
-                <input class="productObs" type="text" name="productObs" placeholder="Observações">
-                </div>
 
-            <button class="addItem">Adicionar Item</button>
+
+            <button id="bttn_addItem" class="bttn_addItem">Adicionar Item</button>
+            <button onclick="gerarPDF()" id="finishPDF" class="bttn_addItem">Finalizar</button>
+
+            <!-- Repeating Group -->
+
+            <div id="itemsContainer"></div>
         </div>
         </div>
     </main>
@@ -76,6 +87,6 @@
     <footer>
 
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="./js/create item.js"></script>
 </body>
 </html>

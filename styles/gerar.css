@@ -95,6 +95,7 @@ textarea{
     height: 40px;
 }
 
-.addItem{
+.bttn_addItem{
     height: 40px;
+    cursor: pointer;
 }
