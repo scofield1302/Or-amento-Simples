@@ -9,6 +9,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .shape{
@@ -27,7 +28,8 @@ main{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: 700px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     padding: 1%;
@@ -40,6 +42,10 @@ main{
     margin-bottom: 10px;
 }
 
+.divForm1{
+width: 100%;
+}
+
 .formGenerate1{
     display: flex;
     flex-direction: column;
@@ -48,13 +54,41 @@ main{
 .divInRow{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 10px;  
+}
+.divInRowRight{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;  
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .divInColumn{
 
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.step1{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+.step2{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    display: none;
+
 }
 
 .standardInput{
@@ -66,12 +100,7 @@ main{
     padding: 0px 10px;
 }
 
-.divForm1{
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
-    gap: 10px;
-}
+
 
 textarea{
     resize: none;
@@ -98,4 +127,15 @@ textarea{
 .bttn_addItem{
     height: 40px;
     cursor: pointer;
+    width: 120px;
+}
+
+.bttnGoAndBack{
+    height: 40px;
+    cursor: pointer;
+    width: 150px;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }

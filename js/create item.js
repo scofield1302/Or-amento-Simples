@@ -1,7 +1,93 @@
-let items = []
-let userInfo = ""
+let items = [];
+let userInfo = [];
 
+const bttnNext = document.getElementById("bttnNext");
+const bttnBack = document.getElementById("bttnBack");
+const userDocument = document.getElementById("inptDocument");
+const address = document.getElementById("comercialAddress");
+const userName = document.getElementById("userName");
+const observations = document.getElementById("observations");
 const bttn_addItem = document.getElementById("bttn_addItem");
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
+
+const nameItem = document.getElementById("nameItem");
+const quantityItem = document.getElementById("quantity");
+const unityItem = document.getElementById("unity");
+const valueItem = document.getElementById("value");
+
+const bttnFinshPdf = document.getElementById("finishPDF");
+
+nameItem.addEventListener("change",function(){
+    disableAddItem(nameItem)
+    
+})
+
+quantityItem.addEventListener("change",function(){
+    disableAddItem(quantityItem)
+    
+})
+
+unityItem.addEventListener("change",function(){
+    disableAddItem(unityItem)
+    
+})
+
+valueItem.addEventListener("change",function(){
+    disableAddItem(valueItem)
+    
+})
+
+function disableAddItem (itemToVerify){
+    if (nameItem.value && quantityItem.value && unityItem.value && valueItem.value){
+        bttn_addItem.disabled = false;
+    }
+}
+
+
+class user_Info {
+    constructor(name,document,address,observations){
+        this.name = name;
+        this.document = document;
+        this.address = address;
+        this.observations = observations;
+    }
+}
+
+bttnNext.addEventListener("click",function(){
+    if (!userDocument.value){
+        alert("Por favor, preencha o número do CPF ou CNPJ");
+        userDocument.focus()
+    }
+    else if (!address.value){
+        alert("Por favor, preencha o Endereço comercial");
+        address.focus()
+    }
+    else if (!userName.value){
+        alert("Por favor, informe o seu nome ou Razão Social");
+        userName.focus()
+    }
+    else {
+        newUser = new user_Info(userName.value,userDocument.value,address.value,observations.value)
+        step1.style.display = "none"
+        step2.style.display = "flex"
+        document.getElementById("nameItem").focus()
+        
+
+
+    }
+    
+})
+bttnBack.addEventListener("click",function(){
+        step1.style.display = "flex"
+        step2.style.display = "none"
+        ;
+})
+
+
+
+
+
 
 
 class items_budget  {
@@ -24,6 +110,7 @@ function addItem(){
 
     new_item = new items_budget(nameItem,quantityItem,unityItem,valueItem,totalPriceItem);
     items.push(new_item);
+    bttn_addItem.disabled = true
 
 }
 
@@ -59,6 +146,7 @@ bttn_addItem.addEventListener("click",function(){
     addItem();
     renderItems(); 
     clearInputs();
+    bttnFinshPdf.disabled = false;
 
 
 })
@@ -66,6 +154,9 @@ bttn_addItem.addEventListener("click",function(){
 function removeItem(index) {
     items.splice(index, 1); // remove pelo índice
     renderItems(); // re-renderiza
+    if (items.length == 0){
+        bttnFinshPdf.disabled = true;
+    }
 }
 
 

@@ -29,22 +29,29 @@
         <div class="div1">
         <span class="spanFillInfo">Preencha as informações abaixo</span>
         <div class="divForm1">
-            <form class="divInRow" action="" method="post">
+            <div class="step1" id="step1">
+            <div class="divInRow">
                 <div class="divInColumn">
-                <label for="userDocument">CPF ou CNPJ</label>
-                <input id="inpt_document" class="standardInput" name="userDocument" placeholder="CPF ou CNPJ" type="text">
+                <label for="inptDocument">CPF ou CNPJ</label>
+                <input id="inptDocument" class="standardInput" name="userDocument" placeholder="CPF ou CNPJ" type="text">
                 </div>
                 <div class="divInColumn">
-                <label for="userAddress">Endereço Comercial</label>
+                <label for="comercialAddress">Endereço Comercial</label>
                 <input id="comercialAddress" class="standardInput" type="text" name="userAddress" placeholder="Seu Endereço Comercial">
-                </div>
-            </form>
+            </div>
+            </div>
                  <div class="divInColumn">
-                <label for="productObs">Observações</label>
-                <input id="observations" class="productObs" type="text" name="productObs" placeholder="Observações">
+                <label for="userName">Nome Completo ou Razão Social</label>
+                <input id="userName" class="productObs" type="text" name="userName" placeholder="Nome Completo ou Razão Social">
+                </div>
+                <div class="divInColumn">
+                    <label for="observations">Observações</label>
+                    <input id="observations" class="productObs" type="text" name="productObs" placeholder="Observações">
+                    </div> 
+                <button class="bttnGoAndBack" id="bttnNext">Avançar</button>
                 </div>
                 <div class="shape"></div>
-
+                <div class="step2" id="step2">
                 <div class="divInColumn">
                 <label for="productDescription">Descrição do produto ou serviço</label>
                 <input id="nameItem" class="productDescription" type="text" name="productDescription" placeholder="Descrição do produto ou serviço">
@@ -70,12 +77,15 @@
                 <label for="productTotalPrice">Valor Total</label>
                 <input id="totalPrice" class="productTotalPrice" type="number" name="productTotalPrice" placeholder="Preço Total">
                 </div>
-
             </div>
+            <div class="divInRowRight">
+                <button id="bttnBack" class="bttn_addItem">Voltar</button>
+                <button disabled onclick="gerarPDF()" id="finishPDF" class="bttn_addItem">Finalizar</button>
+    
+                <button disabled id="bttn_addItem" class="bttn_addItem">Adicionar Item</button>
+                </div>    
+        </div>
 
-
-            <button id="bttn_addItem" class="bttn_addItem">Adicionar Item</button>
-            <button onclick="gerarPDF()" id="finishPDF" class="bttn_addItem">Finalizar</button>
 
             <!-- Repeating Group -->
 
